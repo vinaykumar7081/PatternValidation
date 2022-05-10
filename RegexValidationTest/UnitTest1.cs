@@ -19,5 +19,12 @@ namespace RegexValidationTest
             bool result = input.Validate_FirstName("Kumar");
             Assert.IsTrue(result);
         }
+        [Test]
+        public void InputInString_EmailAddressOfUser()
+        {
+            Validation input = new Validation();
+            bool result = input.Validate_EmailAddress("vinaykumar123@gmail.com");
+            Assert.IsTrue(result);
+        }
     }
 }
