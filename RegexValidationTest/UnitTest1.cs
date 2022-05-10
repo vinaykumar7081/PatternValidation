@@ -30,7 +30,7 @@ namespace RegexValidationTest
         public void InputInString_TestMobileNumberLOfUser()
         {
             Validation input = new Validation();
-            bool result = input.Validate_FirstName("+91 70810209335");
+            bool result = input.Validate_MobileNumber("+91 70810209335");
             Assert.IsTrue(result);
         }
         [Test]
@@ -43,7 +43,13 @@ namespace RegexValidationTest
         public void InputInString_PasswordOfEmailAddressOfUser_AtLeastOne_UpperCase()
         {
             Validation input = new Validation();
-            bool result = input.Validate_EmailPassword("HellOWorld");
+            bool result = input.Validate_EmailPassword_AtLeastOneUpperCase("HellOWorld");
+            Assert.IsTrue(result);
+        }
+        public void InputInString_PasswordOfEmailAddressOfUser_AtLeastOne_Number()
+        {
+            Validation input = new Validation();
+            bool result = input.Validate_EmailPassword_AtLeastOneNumber("HellOWorld");
             Assert.IsTrue(result);
         }
     }
