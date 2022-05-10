@@ -13,5 +13,13 @@ namespace PatternAndRegexValidation
                 return true;
             }
         }
+        public bool Validate_LastName(string last)
+        {
+            if (Regex.IsMatch(last, NAME_REGEX)) ;
+            {
+                Console.WriteLine("LastName is Valid for the user Account:" + last);
+                return true;
+            }
+        }
     }
 }
