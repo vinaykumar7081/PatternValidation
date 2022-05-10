@@ -10,6 +10,7 @@ namespace PatternAndRegexValidation
         public const string EMAILPASSWORD_REGEXX = "[A-Za-z]{8, }$";
         public const string PASSWORDMINIMUMONEUPPERCASE_REGEXX = "[A-Z]{1, }[a-z]{8, }[A-Z]{1, }$";
         public const string PASSWORDMINIMUMONENUMBER_REGEXX = "[A-Z]{1, }[a-z]{8, }[A-Z]{1, }[0-1]{1, }$";
+        public const string PASSWORDMINIMUMONE_SPECIALSYMBLE_REGEXX = "[A-Z]{1, }[a-z]{8, }[A-Z]{1, }[0-1]{1, }[!*@#$%^&+=]{1}$";
 
         public bool Validate_FirstName(string name)
         {
@@ -61,7 +62,15 @@ namespace PatternAndRegexValidation
         }
         public bool Validate_EmailPassword_AtLeastOneNumber(string emailPassword)
         {
-            if (Regex.IsMatch(emailPassword, PASSWORDMINIMUMONEUPPERCASE_REGEXX)) ;
+            if (Regex.IsMatch(emailPassword, PASSWORDMINIMUMONENUMBER_REGEXX)) ;
+            {
+                Console.WriteLine("Password is Valid for the user Account:" + emailPassword);
+                return true;
+            }
+        }
+        public bool Validate_EmailPassword_OneSpcialCharacter(string emailPassword)
+        {
+            if (Regex.IsMatch(emailPassword, PASSWORDMINIMUMONE_SPECIALSYMBLE_REGEXX)) ;
             {
                 Console.WriteLine("Password is Valid for the user Account:" + emailPassword);
                 return true;
