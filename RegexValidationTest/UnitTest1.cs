@@ -40,5 +40,11 @@ namespace RegexValidationTest
             bool result = input.Validate_EmailPassword("Helloworld");
             Assert.IsTrue(result);
         }
+        public void InputInString_PasswordOfEmailAddressOfUser_AtLeastOne_UpperCase()
+        {
+            Validation input = new Validation();
+            bool result = input.Validate_EmailPassword("HellOWorld");
+            Assert.IsTrue(result);
+        }
     }
 }

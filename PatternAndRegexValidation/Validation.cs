@@ -8,6 +8,7 @@ namespace PatternAndRegexValidation
         public const string EMAILADDRESS_REGEX = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([azA-Z]{2,4}|[0-9]{1,3})(\]?)$";
         public const string MOBILENUMBER_REGEX = "^[+]{1}[1-9]{2}[-. ]{1}[1-9]{2}[0-9]{8}$";
         public const string EMAILPASSWORD_REGEXX = "[A-Za-z]{8, }$";
+        public const string PASSWORDMINIMUMONEUPPERCASE_REGEXX = "[A-Z]{1, }[a-z]{8, }[A-Z]{1, }$";
 
         public bool Validate_FirstName(string name)
         {
@@ -44,6 +45,14 @@ namespace PatternAndRegexValidation
         public bool Validate_EmailPassword(string emailPassword)
         {
             if (Regex.IsMatch(emailPassword, EMAILADDRESS_REGEX)) ;
+            {
+                Console.WriteLine("Password is Valid for the user Account:" + emailPassword);
+                return true;
+            }
+        }
+        public bool Validate_EmailPassword_AtLeastOneUpperCase(string emailPassword)
+        {
+            if (Regex.IsMatch(emailPassword, PASSWORDMINIMUMONEUPPERCASE_REGEXX)) ;
             {
                 Console.WriteLine("Password is Valid for the user Account:" + emailPassword);
                 return true;
